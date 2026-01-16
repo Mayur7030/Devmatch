@@ -5,9 +5,11 @@ import { Outlet } from "react-router-dom";
 
 function Body() {
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div
+      className="min-h-screen flex flex-col overflow-x-hidden"
+      style={{ height: "90vh" }}
+    >
       <Navbar className="w-full" />
-
       <main className="flex-grow">
         <Outlet />
       </main>

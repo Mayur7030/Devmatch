@@ -2,7 +2,7 @@ import React from "react";
 import img from "../public/img.jpg";
 function Navbar() {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm w-full">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">DevMatch</a>
       </div>
