@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cupcake;
+  themes: dark --default, cupcake --prefersdark
+
 }
