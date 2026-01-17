@@ -7,7 +7,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios("http://localhost:5173/login", {
+      const response = await axios.post("http://localhost:9999/login", {
         email: emailId,
         pass: password,
       });
