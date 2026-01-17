@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Login() {
-  const [emailId, setEmailId] = useState("");
+  const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      console.log(emailId);
-      console.log(password);
       const response = await axios.post(
         "http://localhost:9999/login",
         {
-          email: emailId,
+          email,
           password
         },
         { withCredentials: true }
@@ -37,7 +35,7 @@ function Login() {
             type="text"
             className="input"
             style={{ width: "fit-content" }}
-            onChange={(e) => setEmailId(e.target.value)}
+            onChange={(e) => setemail(e.target.value)}
           />
 
           <legend className="fieldset-legend">Password:</legend>

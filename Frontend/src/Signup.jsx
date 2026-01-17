@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Signup() {
-  const [userEmail, setuserEmail] = useState("react.mayurpawar@gmail.com");
-  const [userPassword, setUserPassword] = useState("Mayur@4912");
-  const [userName, setUserName] = useState("Mayur");
+  const [email, setemail] = useState("react.mayurpawar@gmail.com");
+  const [password, setpassword] = useState("Mayur@4912");
+  const [name, setname] = useState("Mayur");
   const handleSignUp = async () => {
     try {
       const signUpUser = await axios.post("http://localhost:9999/signup", {
-        name: userName,
-        email: userEmail,
-        password :userPassword
+        name,
+        email,
+        password
       });
     } catch (error) {
       console.log("Error:", error);
@@ -32,8 +32,8 @@ function Signup() {
             type="text"
             className="input"
             style={{ width: "fit-content" }}
-            onChange={(e) => setUserName(e.target.value)}
-            value={userName}
+            onChange={(e) => setname(e.target.value)}
+            value={name}
           />
 
           <legend className="fieldset-legend">Email: </legend>
@@ -41,8 +41,8 @@ function Signup() {
             type="text"
             className="input"
             style={{ width: "fit-content" }}
-            onChange={(e) => setuserEmail(e.target.value)}
-            value={userEmail}
+            onChange={(e) => setemail(e.target.value)}
+            value={email}
           />
 
           <legend className="fieldset-legend">Password:</legend>
@@ -54,8 +54,8 @@ function Signup() {
             minLength="8"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             style={{ width: "fit-content" }}
-            onChange={(e) => setUserPassword(e.target.value)}
-            value={userPassword}
+            onChange={(e) => setpassword(e.target.value)}
+            value={password}
           />
           <div
             className=" card-actions"
