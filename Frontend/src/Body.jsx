@@ -13,7 +13,6 @@ function Body() {
       <main className="flex-grow">
         <Outlet />
       </main>
-
       <Footer className="w-full" />
     </div>
   );

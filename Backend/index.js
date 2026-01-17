@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
+import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
@@ -20,12 +20,13 @@ const connectDB = async () => {
 connectDB();
 const app = express();
 app.use(express.json());
-app.use(cors());
-app.use("/", authRoutes);
+app.use(cors({
+  origin :"http://localhost:5173",
+  credentials:true
+}));
 
-// app.post("/login", (req, res) => {
-//   res.send("client connected to server");
-// });
+
+app.use("/", authRoutes);
 
 app.listen(9999, () => {
   console.log("server started!");
